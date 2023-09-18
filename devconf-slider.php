@@ -40,7 +40,7 @@ function devconf_slider_shortcode(){
     jQuery(document).ready(function($){
         $(".devconf-slider").slick({
             autoplay:true,
-            arrows:false
+            arrows:true
         });
     });
     </script>
@@ -48,7 +48,7 @@ function devconf_slider_shortcode(){
 
     while($query->have_posts()) : $query->the_post();
 
-    $html .='<div class="single-slider-item" style="background-image:url('.get_the_post_thumbnail_url(get_the_ID(), 'large').')">
+    $html .='<div class="devconf-single-slider-item" style="background-image:url('.get_the_post_thumbnail_url(get_the_ID(), 'large').')">
         <div class="devconf-slider-content">
             <h3>'.get_the_title().'</h3>
             '.wpautop(get_the_content()).'
